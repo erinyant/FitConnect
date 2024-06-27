@@ -1,4 +1,4 @@
-# Phase 4 Full-Stack Application Project Template
+# Phase 5 Capstone Project: FitConnect
 
 ## Learning Goals
 
