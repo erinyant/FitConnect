@@ -23,8 +23,8 @@ class User(db.Model, SerializerMixin):
     _password_hash=db.Column(db.String, nullable=False)
     zipcode=db.Column(db.Integer)
 
-    gyms = db.relationship('Gym', back_populates='user, cascade='all, delete-orphan')
-    classes = association_proxy('gyms', 'class')
+    gyms = db.relationship('Gym', back_populates='user', cascade='all, delete-orphan')
+    workouts = association_proxy('gyms', 'workout')
 
     @property
     def password_hash(self):
@@ -90,7 +90,7 @@ class Gym(db.Model, SerializerMixin):
     website=db.Column(db.String)
     cateogry=db.Column(db.String)
     
-    classes = db.relationship('Class', back_populates='gym', cascade='all, delete-orphan')
+    workouts = db.relationship('Workout', back_populates='gym', cascade='all, delete-orphan')
     users=association_proxy('gyms', 'user')
 
     def __repr__(self):
@@ -102,10 +102,10 @@ class Gym(db.Model, SerializerMixin):
             raise ValueError("Name is required")
         return new_name
 
-class Class(db.Model, SerializerMixin):
-    __tablename__='classes' 
+class Workout(db.Model, SerializerMixin):
+    __tablename__='workouts' 
 
-    serialize_rules = ('-gym.classes', '-user.classes',)
+    serialize_rules = ('-gym.workouts', '-user.workouts',)
 
     id=db.Column(db.Integer, primary_key=True)
     title=db.Column(db.String, nullable=False)
@@ -120,4 +120,6 @@ class Class(db.Model, SerializerMixin):
     gym = db.relationship('Gym', back_populates='classes')
 
     def __repr__(self):
-        return f"<Opportunity {self.id}: {self.title}, {self.description}, {self.category}, {self.dates}, {self.time}>"
+        return f"<Workout {self.id}: {self.title}, {self.description}, {self.category}, {self.dates}, {self.time}>"
+    
+    
