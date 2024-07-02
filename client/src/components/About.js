@@ -6,19 +6,19 @@ function About() {
     <div id="about">
         <NavBar />
         <header className="about">
-            What is Fit Connect?
+            Get Your Sweat On
         </header>
         <div className="container">
             <div className="left-div">
-                <h2>Get Your Sweat On</h2>
-                <p>FitConnect is your connection to fitness in your area.  
+                <h2>Explore Your Fitness Options</h2>
+                <p>FitConnect is your connection to fitness in your neighborhood.  
                     Search workouts and fitness centers to find something 
-                    that speaks to you.  </p>
+                    that speaks to you. Whether it is a tried and true workout,
+                    or something new, FitConnect lets you explore numerous options
+                    to get your sweat on. </p>
                 <br></br>
-                <h2>Today</h2>
-                <p>Whether it is a tried and true workout, or something new,
-                    FitConnect lets you explore options in your neighborhood
-                    for fitness. </p>
+                <h2>Placehold</h2>
+                <p>Potential text on how to book classes? </p>
             </div>
         </div>
     </div>

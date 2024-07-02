@@ -43,7 +43,7 @@ return (
           <Route path="/profile" element={<Profile user={user} setUser={setUser} />} />
           <Route path="/workouts" element={<Workouts setUser={setUser} user={user} />}/>
           <Route path="/workouts/:id" element={<Workout setUser={setUser} user={user} />}/>
-          <Route path="/gymss" element={<Gyms setUser={setUser} user={user} />} />
+          <Route path="/gyms" element={<Gyms setUser={setUser} user={user} />} />
           <Route path="/signup" element={<SignUp setUser={setUser} user={user}/>} />
         </Routes>
       </div>
