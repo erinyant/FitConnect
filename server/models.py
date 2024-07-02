@@ -12,19 +12,20 @@ class User(db.Model, SerializerMixin):
     serialize_rules = ('-_password_hash',)
 
     __table_args__ = (
-        db.CheckConstraint('length(username) > 4', name='username_length_over_four'),
-    )
+        db.CheckConstraint('length(username) > 4', name='username_length_over_four'), db.CheckConstraint('length(phone_number) = 10 or length(phone_number) = 12 or length(phone_number) = 15 or length(phone_number) = 17', name='phone_number_length'),
+    ) 
 
     id=db.Column(db.Integer, primary_key=True)
     first_name=db.Column(db.String, nullable = False)
     last_name=db.Column(db.String, nullable = False)
     email=db.Column(db.String, nullable=False)
+    phone_number= db.Column(db.String, nullable=False)
     username=db.Column(db.String, unique=True, nullable=False)
     _password_hash=db.Column(db.String, nullable=False)
     zipcode=db.Column(db.Integer)
 
-    gyms = db.relationship('Gym', back_populates='user', cascade='all, delete-orphan')
-    workouts = association_proxy('gyms', 'workout')
+    workouts = db.relationship('Workout', back_populates='user', cascade='all, delete-orphan')
+    gyms = association_proxy('workouts', 'gym')
 
     @property
     def password_hash(self):
@@ -59,11 +60,19 @@ class User(db.Model, SerializerMixin):
             raise ValueError("Must be valid email address")
         return new_email
     
+    @validates('phone_number')
+    def validates_phone_number(self, key, new_phone_number):
+        if not new_phone_number:
+            raise ValueError("Phone number is required")
+        if not (len(new_phone_number) == 10 or len(new_phone_number) == 12 or len(new_phone_number) == 15 or len(new_phone_number) == 17):
+            raise ValueError("Must be a valid phone number")
+        return new_phone_number
+
     @validates('username')
     def validates_username(self, key, new_username):
         if not new_username:
             raise ValueError("Username is required")
-        if len(new_username) < 6:
+        if len(new_username) < 4:
             raise ValueError("Username must be longer than 4 characters")
         if User.query.filter_by(username=new_username).first():
             raise ValueError("Username must be unique")
@@ -88,10 +97,10 @@ class Gym(db.Model, SerializerMixin):
     id=db.Column(db.Integer, primary_key=True)
     name=db.Column(db.String, unique=True, nullable=False)
     website=db.Column(db.String)
-    cateogry=db.Column(db.String)
+    category=db.Column(db.String)
     
     workouts = db.relationship('Workout', back_populates='gym', cascade='all, delete-orphan')
-    users=association_proxy('gyms', 'user')
+    users=association_proxy('workouts', 'user')
 
     def __repr__(self):
         return f"<Gym {self.id}: {self.name}, {self.website}, {self.category}>"
@@ -116,10 +125,9 @@ class Workout(db.Model, SerializerMixin):
     gym_id=db.Column(db.Integer, db.ForeignKey('gyms.id'), nullable=False)
     user_id=db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
-    user = db.relationship('User', back_populates='classes')
-    gym = db.relationship('Gym', back_populates='classes')
+    user = db.relationship('User', back_populates='workouts')
+    gym = db.relationship('Gym', back_populates='workouts')
 
     def __repr__(self):
         return f"<Workout {self.id}: {self.title}, {self.description}, {self.category}, {self.dates}, {self.time}>"
-    
     

@@ -21,7 +21,7 @@ function Workouts({ user, setUser }) {
             <NavBar user={user} setUser={setUser} />
             <main>
                 <h1 className="workout-gym-header">Workouts</h1>
-                <WorkDropdownFilter setWorkoutss={setWorkouts} workouts={workouts} />
+                <WorkDropdownFilter setWorkouts={setWorkouts} workouts={workouts} />
                 <WorkoutsContainer user={user} setUser={setUser} workouts={workouts} setWorkouts={setWorkouts} />
             </main>
         </div>

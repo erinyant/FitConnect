@@ -7,12 +7,6 @@ from config import app, db, api
 from models import User, Gym, Workout
 
 
-# Views go here!
-
-# @app.route('/')
-# def index():
-#     return '<h1>Project Server</h1>'
-
 @app.before_request
 def check_log_status():
     open_access_list = [
@@ -67,6 +61,7 @@ class Signup(Resource):
         first_name = params.get('firstName')
         last_name= params.get('lastName')
         email = params.get('email')
+        phone_number = params.get('phoneNumber')
         zipcode = params.get('zipCode')
         
         user = User(
@@ -74,6 +69,7 @@ class Signup(Resource):
             first_name = first_name,
             last_name = last_name,
             email = email,
+            phone_number = phone_number,
             zipcode = zipcode
         )
         user.password_hash = password
@@ -198,6 +194,7 @@ class Users(Resource):
         first_name = params.get('first_name')
         last_name= params.get('last_name')
         email = params.get('email')
+        phone_number = params.get('phone_number')
         zipcode = params.get('zipcode')
         
         user = User(
@@ -205,6 +202,7 @@ class Users(Resource):
             first_name = first_name,
             last_name = last_name,
             email = email,
+            phone_number = phone_number,
             zipcode = zipcode
         )
         user.password_hash = password
