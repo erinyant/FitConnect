@@ -40,7 +40,7 @@ function NavBar() {
         <Container>
           <Navbar.Brand href="/" className="nav-brand">
             <img 
-              src={logo}
+            //   src={logo}
               width="30"
               height="30"
               alt="logo"
