@@ -9,7 +9,7 @@ function Home( {user, setUser}) {
     <div>
         <NavBar user={user} setUser={setUser} />
         <main>
-            {/* <HomeImageCarousel /> */}
+            <HomeImageCarousel />
             <About />
         </main>
     </div>

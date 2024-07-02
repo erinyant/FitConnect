@@ -18,7 +18,9 @@ function About() {
                     to get your sweat on. </p>
                 <br></br>
                 <h2>Placehold</h2>
-                <p>Potential text on how to book classes? </p>
+                <p>Potential text on how to book classes? Or something? What am I 
+                    doing?
+                </p>
             </div>
         </div>
     </div>
