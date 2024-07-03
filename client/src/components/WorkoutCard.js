@@ -1,5 +1,5 @@
 import React from "react";
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 // import { faker } from '@faker-js/faker';
 import { useNavigate } from "react-router-dom";
@@ -27,15 +27,15 @@ function WorkoutCard({user, workout}) {
             <Card.Text className="workout-description">{description}</Card.Text>
             <Card.Text className="work-category">Category: {category}</Card.Text>
             <Card.Text className="workout-dates">Date Range: {dates}</Card.Text>
-            <Card.Text className="workout-time">Committment: {time}</Card.Text>
+            <Card.Text className="workout-time">Time: {time}</Card.Text>
             {/* <div className="buttons">
-              <Button className="apply-button" onClick={() => handleApplyButton()}>Apply</Button>
+              <Button className="join-button" onClick={() => handleJoinButton()}>Join</Button>
             </div> */}
           </Card.Body>
         </div>
-        {/* <div className="workoutcard-img">
-          <img className="card-logo" src={imageURl} alt="Organization"/>
-        </div> */}
+        <div className="workoutcard-img">
+          {/* <img className="card-logo" src={imageURl} alt="Workout"/> */}
+        </div>
       </Card>
     )
 }

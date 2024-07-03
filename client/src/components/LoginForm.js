@@ -9,7 +9,7 @@ function LoginForm({ user, setUser }) {
     const navigate = useNavigate();
 
     let LoginSchema = yup.object().shape({
-        username: yup.string().required('username required').min(6, 'Username must be at least 6 characters'),
+        username: yup.string().required('username required').min(4, 'Username must be at least 4 characters'),
         password: yup.string().required('password required').min(8, 'Password must be at least 8 characters')
     })
 

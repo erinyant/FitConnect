@@ -32,7 +32,7 @@ function Gyms({ user, setUser}) {
     <NavBar user={user} setUser={setUser} />
     <main>
       <h1 className="workout-gym-header">Gyms</h1>
-        <Search setSearchGym={setSearchGym}/>
+        {/* <Search setSearchGym={setSearchGym}/> */}
         <GymContainer gyms={searchedGyms} />
     </main>
     </>

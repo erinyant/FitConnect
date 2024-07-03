@@ -6,7 +6,7 @@ import SignUp from "../pages/SignUp";
 import Profile from "../pages/Profile";
 import Workouts from "../pages/Workouts";
 import Workout from "../pages/Workout";
-import Gyms from "../pages/Gyms"
+import Gyms from "../pages/Gyms";
 import { AppContext } from "../context/Context";
 
 

@@ -3,8 +3,9 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Router, Link } from "react-router-dom";
 
-function GymCard({org}) {
-  const {name, website, category, workouts} = org
+function GymCard({gym}) {
+  const {name, website, category, workouts} = gym
+  console.log(gym)
 
   const workout = workouts.map((workout) => {
     return (<div key={workout.id}>
@@ -19,7 +20,7 @@ function GymCard({org}) {
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>Workouts Available:</Card.Text>
-          <div className="gym-workouts">{workouts}</div>
+          <div className="gym-workouts">{workout}</div>
           <br></br>
           <Card.Text className="gym-website">{website}</Card.Text>
           <Card.Text className="gym-category">Type: {category}</Card.Text>

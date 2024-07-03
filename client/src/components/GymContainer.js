@@ -1,7 +1,6 @@
 import React from "react";
 import Stack from 'react-bootstrap/Stack';
 import GymCard from "../components/GymCard";
-// import Col from 'react-bootstrap/Col';
 
 function GymContainer({user, gyms}) {
 

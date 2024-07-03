@@ -54,13 +54,14 @@ body {
 .about {
   margin-left: 0vw;
   padding-left: 5vw;
+  text-indent: 1.9em; 
   justify-content: left;
   align-items: center;
   font-weight: light;
   font-family: Helvetica;
   color: #191718;
-  font-size: 30px;
-  background-color: #0A62D0;
+  font-size: 40px;
+  background-color: #18ACBA;
 }
 
 .about-heading {
@@ -113,7 +114,7 @@ body {
 .navbar-login-btn {
   margin-top: 5px !important;
   margin-left: 5px !important;
-  padding: 5px 10px !important;
+  padding: 10px 15px !important;
   background-color: #F3D849 !important;
   border: none !important;
   border-radius: 5px !important;
@@ -133,7 +134,7 @@ body {
 }
 
 .navbar {
-  background-color: #0A62D0;
+  background-color: #18ACBA;
   position: sticky;
   top: 0;
   z-index: 1000; 
@@ -143,7 +144,6 @@ body {
 
 .nav-link {
   color: #191718 !important;
-  
 }
 
 .nav-brand {
@@ -173,7 +173,7 @@ body {
 }
 
 .workout-card {
-  background-color: #0A62D0 !important;
+  background-color: #18ACBA !important;
   color: #191718 !important;
   width: 75vw;
   position: relative;
@@ -256,7 +256,7 @@ body {
 }
 
 .gym-card {
-  background-color: #0A62D0 !important;
+  background-color: #18ACBA !important;
   color: #191718 !important;
   width: 75vw;
   /* margin-left: 50px; */
@@ -358,7 +358,7 @@ body {
 
 /* SIGNUP */
 .signup-container {
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 150px;
   color: #191718;
   font-weight: 550;
@@ -452,7 +452,6 @@ body {
   margin-bottom: 150px;
   color: #191718;
   font-weight: 550;
-  font-style: italic;
   font-family: Helvetica;
 }
 /* .signup-container {
@@ -462,7 +461,6 @@ body {
   margin-bottom: 150px;
   color: #31525b;
   font-weight: 550;
-  font-style: italic;
   font-family: Verdana;
 } */
 

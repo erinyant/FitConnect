@@ -63,6 +63,7 @@ class Signup(Resource):
         email = params.get('email')
         phone_number = params.get('phoneNumber')
         zipcode = params.get('zipCode')
+        print(first_name)
         
         user = User(
             username = username,
@@ -129,7 +130,7 @@ class WorkoutById(Resource):
         if workout:
             db.session.delete(workout)
             db.session.commit()
-            return make_response({"message": "Successfully deleted Workout"}, 204)
+            return make_response({"message": "Workout successfully deleted"}, 204)
         else:
             return make_response({"error": "Gym not found"}, 404)
 
