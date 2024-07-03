@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from "react-router-dom";
-// import logo from "../assets/logo.jpeg";
+import Logo from "../assets/Logo.png";
 import { AppContext } from "../context/Context";
 
 function NavBar() {
@@ -40,9 +40,9 @@ function NavBar() {
         <Container>
           <Navbar.Brand href="/" className="nav-brand">
             <img 
-            //   src={logo}
-              width="30"
-              height="30"
+              src={Logo}
+              width="80"
+              height="80"
               alt="logo"
             />  Fit Connect
           </Navbar.Brand>

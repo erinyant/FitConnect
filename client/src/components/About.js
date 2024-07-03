@@ -18,8 +18,8 @@ function About() {
                     to get your sweat on. </p>
                 <br></br>
                 <h2>Placehold</h2>
-                <p>Potential text on how to book classes? Or something? What am I 
-                    doing?
+                <p>Potential text on how to book classes? Or something? Blog coming
+                    soon? Connect with fit friends here?
                 </p>
             </div>
         </div>
