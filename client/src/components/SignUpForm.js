@@ -12,6 +12,7 @@ function SignUpForm({ user, setUser }) {
         firstName: yup.string().min(1, 'First name too short!').max(15, 'First name too long!'),
         lastName: yup.string().min(1, 'Last name too short!').max(15, 'Last name too long!'),
         email: yup.string().email("Invalid email address"),
+        phoneNumber: yup.string().min(10, 'Phone number too short!').max(17, 'Phone number too long!'),
         username: yup.string().min(4, 'Username too short!').max(15, 'Username too long!'),
         password: yup.string().min(8,'Password too short!').max(15, 'Password too long!'),
         passwordConfirmation: yup.string().oneOf([yup.ref('password')], 'Passwords must match!'),
@@ -24,6 +25,7 @@ function SignUpForm({ user, setUser }) {
 
     const handleFormSubmit = (values, { setSubmitting  }) => {
         const endpoint = "/signup";
+        console.log(values)
         fetch (endpoint, {
             method: 'POST',
             headers: {
@@ -32,6 +34,7 @@ function SignUpForm({ user, setUser }) {
             body: JSON.stringify(values)
         }).then((resp) => {
             if (resp.ok) {
+                console.log(resp)
                 return resp.json()
             }   else {
                 alert('Invalid credentials')
@@ -48,6 +51,7 @@ function SignUpForm({ user, setUser }) {
         firstName: '',
         lastName: '',
         email: '',
+        phoneNumber: '',
         username: '', 
         password: '', 
         passwordConfirmation: '',
@@ -129,6 +133,17 @@ function SignUpForm({ user, setUser }) {
                                     onChange={handleChange}
                                 />
                         </div>
+                        <div className="left-column">
+                            <label htmlFor='phoneNumber'>Phone Number:</label>
+                                <input
+                                    id='phoneNumber'
+                                    name='phoneNumber'
+                                    placeholder='Phone Number'
+                                    required
+                                    value={values.phoneNumber}
+                                    onChange={handleChange}
+                                />
+                       </div>
                         <div className="right-column">
                             <label htmlFor='zipCode'>Zip Code:</label>
                                 <input

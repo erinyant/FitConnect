@@ -11,7 +11,7 @@ function Workouts({ user, setUser }) {
                 if (resp.ok) {
                     return resp.json();
                 }
-                throw Error('Network response was not ok.');
+                // throw Error('Network response was not ok.');
             })
             .then((workoutsData) => setWorkouts(workoutsData));
     }, []);

@@ -14,6 +14,7 @@ function ProfileForm({ setUser }) {
         firstName: yup.string().min(4, 'First name too short!').max(15, 'First name too long!'),
         lastName: yup.string().min(1, 'Last name too short!').max(15, 'Last name too long!'),
         email: yup.string().email("Invalid email address"),
+        phoneNumber: yup.string().min(10, 'Phone number too short!').max(17, 'Phone number too long!'),
         zipCode: yup.number().integer().min(10000, 'Invalid zip code').max(99999, 'Invalid zip code!'),
     })
 
@@ -65,6 +66,7 @@ function ProfileForm({ setUser }) {
         firstName: user === null || user === undefined ? '' : user.first_name,
         lastName: user === null || user === undefined ? '' : user.last_name,
         email: user === null || user === undefined ? '' : user.email,
+        phoneNumber: user === null || user === undefined ? '' : user.phone_number,
         zipCode: user === null || user === undefined ? '' : user.zipcode,
     }
 
@@ -111,6 +113,17 @@ function ProfileForm({ setUser }) {
                             />
                         </div>
                         <div className="right-column">
+                            <label htmlFor='phoneNumber'>Phone Number:</label>
+                            <input
+                                id='phoneNumber'
+                                name='phoneNumber'
+                                placeholder='Phone Number'
+                                required
+                                value={values.phoneNumber}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="left-column">
                             <label htmlFor='zipCode'>Zip Code:</label>
                             <input
                                 id='zipCode'

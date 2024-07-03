@@ -41,8 +41,8 @@ function NavBar() {
           <Navbar.Brand href="/" className="nav-brand">
             <img 
               src={Logo}
-              width="80"
-              height="80"
+              width="90"
+              height="90"
               alt="logo"
             />  Fit Connect
           </Navbar.Brand>
@@ -52,7 +52,7 @@ function NavBar() {
               <Nav.Link className="nav-link" href="#about" onClick={handleAboutClick}>About</Nav.Link>
               <Nav.Link className="nav-link" href="/workouts">Workouts</Nav.Link>
               <Nav.Link className="nav-link" href="/gyms">Gyms</Nav.Link>
-              <Nav.Link className="nav-link" href="/profile">Profile</Nav.Link>
+              {user === null || user === undefined ? "" : <Nav.Link className="nav-link" href="/profile">Profile</Nav.Link>}
               {user === null || user === undefined ? <Nav.Link className="nav-link" href="/signup">Signup</Nav.Link>: ""}
             </Nav>
            {user === null || user === undefined ? <Button className="navbar-login-btn" onClick={handleLogInClick}>Login</Button> : <Button className="navbar-login-btn" onClick={handleLogoutClick}>Logout</Button>}
