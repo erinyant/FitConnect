@@ -52,9 +52,9 @@ function HomeImageCarousel() {
                 Time to sweat
             </h1>
             <h4>
-                FitConnect connects you to awesome workouts near you.
+                FitConnect helps you find awesome workouts near you.
             </h4>
-            <button className="button" onClick={handleGetStarted}>Get Started</button>
+            <button className="button" onClick={handleGetStarted}>Find Workouts</button>
         </div>
     </div>
   );
