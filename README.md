@@ -1,6 +1,5 @@
 # Phase 5 Capstone Project: FitConnect
 Built by Erin Yant
-
 ---
 
 ## Introduction
