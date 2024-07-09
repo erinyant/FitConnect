@@ -242,6 +242,7 @@ class UserById(Resource):
         else:
             return make_response({"error": "User not found"}, 404)
 
+
 api.add_resource(Home, '/home')
 api.add_resource(CheckSession, '/check_session', endpoint='check_session')
 api.add_resource(Login, '/login')
@@ -253,7 +254,6 @@ api.add_resource(Users, '/user')
 api.add_resource(UserById, '/user/<int:id>')
 api.add_resource(Gyms, '/gyms')
 api.add_resource(GymById, '/gyms/<int:id>')
-
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
