@@ -130,4 +130,3 @@ class Workout(db.Model, SerializerMixin):
 
     def __repr__(self):
         return f"<Workout {self.id}: {self.title}, {self.description}, {self.category}, {self.dates}, {self.time}>"
-    
