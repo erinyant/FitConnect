@@ -37,25 +37,6 @@ function WorkoutCard({user, workout}) {
       setInWorkoutList(!inWorkoutList);
     }
 
-  //   useEffect(() => {
-  //     let workoutList = JSON.parse(localStorage.getItem("workoutList")) || []
-  //     setInWorkoutList(workoutList.some((w) => w.id === workout.id))
-  // })
-
-  //   function handleJoinClick() {
-  //     let workoutList = JSON.parse(localStorage.getItem("workoutList")) || []
-  //     if (!inWorkoutList) {
-  //         const workoutCard = workout
-  //         workoutList.push(workoutCard)
-  //         localStorage.setItem("workoutList", JSON.stringify(workoutList))
-  //     } else {
-  //         let indexOfWorkout = workoutList.findIndex((w) => w.id === workout.id )
-  //         workoutList.splice(indexOfWorkout, 1)
-  //         localStorage.setItem("workoutList", JSON.stringify(workoutList))
-  //     }
-  //     setInWorkoutList(!inWorkoutList)
-  // }
-
     return (
       <Card className="workout-card">
         <Card.Header className="card-header" as="h5">{gym.name}</Card.Header>
