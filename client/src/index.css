@@ -54,7 +54,7 @@ body {
 .about {
   margin-left: 0vw;
   padding-left: 5vw;
-  text-indent: 1.9em; 
+  text-indent: 1em; 
   justify-content: left;
   align-items: center;
   font-weight: light;
@@ -173,7 +173,7 @@ body {
 }
 
 .workout-card {
-  background-color: #18ACBA !important;
+  background-color: #a9b0b0 !important;
   color: #191718 !important;
   width: 75vw;
   position: relative;
@@ -185,7 +185,7 @@ body {
   position: absolute;
   top: 70%;
   right: 30px;
-  width: 200px;
+  width: 100px;
   height: auto;
   transform: translateY(-50%);
   z-index: 1;
@@ -231,13 +231,14 @@ body {
   margin-right: 8px;
 }
 
-.apply-button {
+.join-button {
   margin-top: 5px !important;
   margin-left: 5px !important;
   padding: 5px 10px !important;
-  background-color: #F3D849 !important;
+  background-color: #30c0cd !important;
   border: none !important;
   border-radius: 5px !important;
+  border: 2px solid rgb(71, 70, 70) !important;
   color: #191718 !important;
   cursor: pointer !important;
 }
@@ -256,17 +257,18 @@ body {
 }
 
 .gym-card {
-  background-color: #18ACBA !important;
+  background-color: #a9b0b0 !important;
   color: #191718 !important;
   width: 75vw;
   /* margin-left: 50px; */
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 60px;
 }
 
 .card-header {
-  background-color: #F3D849 !important;
+  background-color: #30c0cd !important;
 }
 
 .gymcard-img {
@@ -358,7 +360,7 @@ body {
 
 /* SIGNUP */
 .signup-container {
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 150px;
   color: #191718;
   font-weight: 550;
@@ -375,7 +377,7 @@ body {
 }
 
 .form {
-  margin-top:50px;
+  margin-top:100px;
   margin-left: 200px;
   margin-right: 200px;
   display: grid;
@@ -466,6 +468,7 @@ body {
 
 .signup-header {
   display: flex;
+  margin-top: 120px;
   justify-content: center;
   align-items: center;
   color: #191718;
@@ -561,7 +564,7 @@ body {
 }
 
 .login-header {
-  margin-top: 40px;
+  margin-top: 120px;
   margin-bottom: 30px;
   padding-top: 40px;
   color: #191718;
@@ -580,7 +583,7 @@ body {
 
 .signup-button-loginpage {
   margin-left: 5px !important;
-  background-color: #ffa101 !important;
+  background-color: #F3D849 !important;
   border: none !important;
   border-radius: 5px !important;
   color: #31525b !important;
@@ -599,7 +602,7 @@ body {
   margin-top: 5px !important;
   margin-left: 250px !important;
   padding: 5px 10px !important;
-  background-color: #ffa101 !important;
+  background-color: #F3D849 !important;
   border: none !important;
   border-radius: 5px !important;
   color: #31525b !important;

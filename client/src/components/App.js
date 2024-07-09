@@ -7,6 +7,7 @@ import Profile from "../pages/Profile";
 import Workouts from "../pages/Workouts";
 import Workout from "../pages/Workout";
 import Gyms from "../pages/Gyms";
+import JoinedWorkouts from "../pages/JoinedWorkouts";
 import { AppContext } from "../context/Context";
 
 
@@ -41,6 +42,7 @@ return (
           <Route path="/workouts/:id" element={<Workout setUser={setUser} user={user} />}/>
           <Route path="/gyms" element={<Gyms setUser={setUser} user={user} />} />
           <Route path="/signup" element={<SignUp setUser={setUser} user={user}/>} />
+          <Route path="/joined_workouts" element={<JoinedWorkouts />} />
         </Routes>
       </div>
     </AppContext.Provider>

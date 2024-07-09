@@ -52,10 +52,11 @@ function NavBar() {
               <Nav.Link className="nav-link" href="#about" onClick={handleAboutClick}>About</Nav.Link>
               <Nav.Link className="nav-link" href="/workouts">Workouts</Nav.Link>
               <Nav.Link className="nav-link" href="/gyms">Gyms</Nav.Link>
+              {user === null || user === undefined ? "" : <Nav.Link className="nav-link" href="/joined_workouts">Joined Workouts</Nav.Link>}
               {user === null || user === undefined ? "" : <Nav.Link className="nav-link" href="/profile">Profile</Nav.Link>}
-              {user === null || user === undefined ? <Nav.Link className="nav-link" href="/signup">Signup</Nav.Link>: ""}
+              {user === null || user === undefined ? <Nav.Link className="nav-link" href="/signup">Sign Up</Nav.Link>: ""}
             </Nav>
-           {user === null || user === undefined ? <Button className="navbar-login-btn" onClick={handleLogInClick}>Login</Button> : <Button className="navbar-login-btn" onClick={handleLogoutClick}>Logout</Button>}
+           {user === null || user === undefined ? <Button className="navbar-login-btn" onClick={handleLogInClick}>Log In</Button> : <Button className="navbar-login-btn" onClick={handleLogoutClick}>Logout</Button>}
           </Navbar.Collapse>
         </Container>
       </Navbar>

@@ -1,14 +1,16 @@
-import React from "react";
-// import Button from 'react-bootstrap/Button';
+import React, { useState, useEffect } from 'react';
+import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 // import { faker } from '@faker-js/faker';
 import { useNavigate } from "react-router-dom";
+import Logo2 from "../assets/Logo2.png";
 
 function WorkoutCard({user, workout}) {
     const {title, description, category, dates, time, gym} = workout
     const navigate = useNavigate();
+    const [inWorkoutList, setInWorkoutList] = useState(false);
 
-    function handleApplyButton() {
+    function handleJoinButton() {
         if( user === null || user === undefined){
           alert ("User must be logged in.")
           return ;
@@ -16,7 +18,43 @@ function WorkoutCard({user, workout}) {
         navigate(`/workouts/${workout.id}`)
     }
 
-    // let imageURl = faker.image.avatar()
+    useEffect(() => {
+      let workoutList = JSON.parse(localStorage.getItem("workoutList")) || [];
+      setInWorkoutList(workoutList.some((w) => w.id === workout.id));
+    }, []);
+
+    function handleJoinClick() {
+      let workoutList = JSON.parse(localStorage.getItem("workoutList")) || [];
+      if (!inWorkoutList) {
+        const workoutCard = workout;
+        workoutList.push(workoutCard);
+        localStorage.setItem("workoutList", JSON.stringify(workoutList));
+      } else {
+        let indexOfWorkout = workoutList.findIndex((w) => w.id === workout.id);
+        workoutList.splice(indexOfWorkout, 1);
+        localStorage.setItem("workoutList", JSON.stringify(workoutList));
+      }
+      setInWorkoutList(!inWorkoutList);
+    }
+
+  //   useEffect(() => {
+  //     let workoutList = JSON.parse(localStorage.getItem("workoutList")) || []
+  //     setInWorkoutList(workoutList.some((w) => w.id === workout.id))
+  // })
+
+  //   function handleJoinClick() {
+  //     let workoutList = JSON.parse(localStorage.getItem("workoutList")) || []
+  //     if (!inWorkoutList) {
+  //         const workoutCard = workout
+  //         workoutList.push(workoutCard)
+  //         localStorage.setItem("workoutList", JSON.stringify(workoutList))
+  //     } else {
+  //         let indexOfWorkout = workoutList.findIndex((w) => w.id === workout.id )
+  //         workoutList.splice(indexOfWorkout, 1)
+  //         localStorage.setItem("workoutList", JSON.stringify(workoutList))
+  //     }
+  //     setInWorkoutList(!inWorkoutList)
+  // }
 
     return (
       <Card className="workout-card">
@@ -28,13 +66,13 @@ function WorkoutCard({user, workout}) {
             <Card.Text className="work-category">Category: {category}</Card.Text>
             <Card.Text className="workout-dates">Date Range: {dates}</Card.Text>
             <Card.Text className="workout-time">Time: {time}</Card.Text>
-            {/* <div className="buttons">
+            <div className="buttons">
               <Button className="join-button" onClick={() => handleJoinButton()}>Join</Button>
-            </div> */}
+            </div>
           </Card.Body>
         </div>
         <div className="workoutcard-img">
-          {/* <img className="card-logo" src={imageURl} alt="Workout"/> */}
+          <img className="card-logo" src={Logo2} alt="Workout"/>
         </div>
       </Card>
     )

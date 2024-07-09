@@ -2,6 +2,7 @@ import React from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Router, Link } from "react-router-dom";
+import Logo3 from "../assets/Logo3.png";
 
 function GymCard({gym}) {
   const {name, website, category, workouts} = gym
@@ -27,6 +28,9 @@ function GymCard({gym}) {
           <div className="buttons">
           </div>
         </Card.Body>
+        </div>
+        <div className="workoutcard-img">
+          <img className="card-logo" src={Logo3} alt="Workout"/>
         </div>
       </Card>
     )
