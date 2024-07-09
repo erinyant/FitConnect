@@ -54,7 +54,6 @@ body {
 .about {
   margin-left: 0vw;
   padding-left: 5vw;
-  text-indent: 1.9em; 
   justify-content: left;
   align-items: center;
   font-weight: light;
@@ -173,9 +172,9 @@ body {
 }
 
 .workout-card {
-  background-color: #18ACBA !important;
+  background-color: #919497 !important;
   color: #191718 !important;
-  width: 75vw;
+  width: 65vw;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -185,7 +184,7 @@ body {
   position: absolute;
   top: 70%;
   right: 30px;
-  width: 200px;
+  width: 100px;
   height: auto;
   transform: translateY(-50%);
   z-index: 1;
@@ -231,15 +230,16 @@ body {
   margin-right: 8px;
 }
 
-.apply-button {
+.join-button {
   margin-top: 5px !important;
   margin-left: 5px !important;
   padding: 5px 10px !important;
-  background-color: #F3D849 !important;
+  background-color: #5e9eed !important;
   border: none !important;
   border-radius: 5px !important;
   color: #191718 !important;
   cursor: pointer !important;
+  outline: 2px solid #191718;
 }
 
 
@@ -256,7 +256,7 @@ body {
 }
 
 .gym-card {
-  background-color: #18ACBA !important;
+  background-color: #919497 !important;
   color: #191718 !important;
   width: 75vw;
   /* margin-left: 50px; */
@@ -266,7 +266,7 @@ body {
 }
 
 .card-header {
-  background-color: #F3D849 !important;
+  background-color: #18ACBA !important;
 }
 
 .gymcard-img {
@@ -561,7 +561,7 @@ body {
 }
 
 .login-header {
-  margin-top: 40px;
+  margin-top: 80px;
   margin-bottom: 30px;
   padding-top: 40px;
   color: #191718;

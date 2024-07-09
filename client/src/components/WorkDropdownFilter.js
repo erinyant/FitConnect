@@ -16,7 +16,7 @@ function WorkDropdownFilter({ setWorkouts, workouts}) {
             case 'Category':
                 sortedWorkouts = [...workouts].sort((a, b) =>  a.category.localeCompare(b.category));
                 break;
-            // case 'Date Range':
+            // case 'Date':
             //     sortedWorkouts = [...workouts].sort((a, b) => new Date(a.dates) - new Date(b.dates));
             //     break;
             default:
@@ -32,7 +32,7 @@ function WorkDropdownFilter({ setWorkouts, workouts}) {
                 <option value="">Select</option>
                 <option value="Workout">Workout</option>
                 <option value="Category">Category</option>
-                {/* <option value="Date Range">Date Range</option> */}
+                {/* <option value="Date">Date</option> */}
             </select>
         </div>
     )

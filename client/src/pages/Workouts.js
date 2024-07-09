@@ -10,10 +10,16 @@ function Workouts({ user, setUser }) {
             .then((resp) => {
                 if (resp.ok) {
                     return resp.json();
-                }
+                } else {
+                    throw Error('Network response was not ok.');
+                  }
                 // throw Error('Network response was not ok.');
             })
-            .then((workoutsData) => setWorkouts(workoutsData));
+            .then((workoutsData) => setWorkouts(workoutsData))
+            .catch((error) => {
+                // Handle the error here
+                console.error(error);
+              });
     }, []);
 
     return (

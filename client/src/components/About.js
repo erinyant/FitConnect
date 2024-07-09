@@ -17,13 +17,12 @@ function About() {
                     or something totally new, FitConnect lets you explore numerous
                     options to get your sweat on. </p>
                 <br></br>
-                <h2>Placehold</h2>
+                {/* <h2>Placehold</h2>
                 <p>Just search a fitness center or category, and you can book a spot
                     for your next workout.
-                </p>
+                </p> */}
                 <p>
                     Stay tuned: Blog coming soon!
-                    Connect with fit friends here?
                 </p>
             </div>
         </div>
