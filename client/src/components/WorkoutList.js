@@ -17,7 +17,6 @@ function WorkoutList() {
     
     const item = workoutItems.map((w) => (
         w.gym_workouts.map((gw) => (
-                // <li>{gi.workout?.name} : {gi.weight_of_ingr}{gi.weight_type}</li>
                 <li>{gw.id}: {gw.title}, {gw.description}, {gw.category}, {gw.dates}, {gw.time}</li>
         ))
     ));
