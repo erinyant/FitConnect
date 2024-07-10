@@ -46,7 +46,7 @@ function WorkoutCard({user, workout}) {
             <Card.Text className="workout-description">{description}</Card.Text>
             <Card.Text className="work-category">Category: {category}</Card.Text>
             <Card.Text className="workout-dates">Date: {dates}</Card.Text>
-            <Card.Text className="workout-time">Time: {time}</Card.Text>
+            {/* <Card.Text className="workout-time">Time: {time}</Card.Text> */}
             <div className="buttons">
               <Button className="join-button" onClick={() => handleJoinButton()}>Join</Button>
             </div>
