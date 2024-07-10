@@ -424,10 +424,16 @@ body {
 
 .form .left-column {
   grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form .right-column {
   grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form .left-column, 
@@ -461,7 +467,7 @@ body {
   justify-content: center;
   align-items: center;
   color: #3f646f;
-  font-weight: 550;
+  font-weight: 400;
   font-family: Helvetica;
 }
 
@@ -505,6 +511,7 @@ body {
   margin-bottom: 10px;
   margin-left: 10px;
   margin-right: 10px;
+  border: none !important;
   border-radius: 5px;
   background-color: #F3D849;
   font-family: Helvetica;
@@ -547,7 +554,7 @@ body {
 
 .signup-loginpage {
   text-align: center;
-  color: #31525b;
+  color: #191718;
   font-family: Helvetica;
 }
 
@@ -556,16 +563,18 @@ body {
   background-color: #F3D849 !important;
   border: none !important;
   border-radius: 5px !important;
-  color: #31525b !important;
+  color: #191718 !important;
   cursor: pointer !important;
   font-family: Helvetica;
 }
 
 .mb-3 {
-  color: #31525b;
-  font-style: italic;
+  color: #191718;
   font-family: Helvetica;
   font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .login-button {

@@ -8,7 +8,7 @@ FitConnect is a full-stack application that allows a user to search and join fit
 A user is able:
 - Create a profile, and log in and out of the app
 - Search for fitness classes by location, fitness center, type, and date
-- Join a class
+- Join a class, and see a list of their joined classes
 - Delete their profile
 
 
